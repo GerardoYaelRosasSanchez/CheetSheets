@@ -1,0 +1,81 @@
+Comandos de git
+
+<----------------------------------------------------------basicos-------------------------------------------------------->
+
+git init: Comenzar un nuevo repositorio para el proyecto.
+git status -s: Ver el estado en el que se encuentran todos los documentos.
+	??: Muestra todos los archivos y directorios que se encuentran en la carpeta original, no obstante, no muestra
+	   estos aún no se encuentrarn guardados.
+	A: El archivo se encuentra en el área de ensayo, o en otras palabras, esta preparado para realizar un respaldo.
+	M "En color rojo": El archivo ha sido modificado.
+	M "En color verde": El archivo modificado ha pasado al área de ensayo. 
+git status: Muestra los archivos que no han sido agregados con el comando add.	 
+git add nombreDelArchivo: Pasa el archivo al área de ensayo. 
+git add .: Agrega todos los archivos. 
+git commit -m "agregarUnaDescripcionOpcional": Guarda la foto instantanea de los archivos que se encuentran en el área de ensayo. 
+git status: Muestra el estado de los archivos en la sala de espera.
+git restore nombrearchivo: Descarta los cambios del archivo hasta el ultimo commit. 
+-En otras palabras, borra todo lo que se encuentre en la sala de espera o fuera de la sala de espera.
+git checkout --nombrearchivo: Hace lo mismo que git restore.
+git log nombrearchivo: Muestra el historial de cambios del archivo que se menciono.
+git log --oneline: Muestra todas los commit que se han hecho hasta el momento. 
+git log: Muestra los commits con la fecha en la que se hicieron y el autor. 
+git reset --hard codigoDeLaInstantanea: Regresa el proyecto a una copia establecida. 
+q: Se sale de la lista. Se usa cuando se utiliza el log para salir del modo vista.
+Tabulador: Se utiliza para complementar un nombre que se esta escribiendo en ese momento. 
+-Aquí se pueden ver los usuarios de la cuenta actual, ya sea local o global.
+git config --local user.name nombreusuario: Cambia el nombre del usuario de la carpeta actual.
+git config --local user.mail mailusuario: Cambia el mail del usuario de la carpeta actual.
+git config --global user.name nombreusuario: Cambia el nombre del usuario que se usa por defaul en todas las carpetas.
+git config --global user.name: Ingresar el nombre de quien esta trabajando en el equipo. 
+git config --global user.email: Ingresa el correo de quien esta trabajando en el equipo. 
+git config --global -l: Muestra el usuario y el correo de quien esta trabajando en el equipo. 
+git diff: Muestra la diferencia entre el trabajo actual y el ultimo commit. 
+git checkout .:  Regresa el codigo hasta el último commit. 
+git help: Muestra la lista de comandos. 
+git reset: Regresa el proyecto al último commit. En este caso solamente elimina los git add. Los cambios solamente se
+hacen en git, no en el documento donde se esta trabajando.
+git reset --hard: Funciona igual que git reset, pero este si realiza los cambios en el documento donde se esta trabajando. 
+git reset nombreDelArchivo: Mueve el archivo mencionado de la stage area. 
+git reset --hard numeroCommit: Regresa el commit al estado mencionado. 
+git reflog: Muestra todos los cambios que se han hecho. Contando los reset. 
+esc, despues :wq para salir del modo editor.
+git diff numerocommitantiguo numerocomitnuevo: Muestra los cambios que se han realizado en el archivo desde el cambio 
+--antiguo hasta el nuevo cambio.
+
+<-----------------------------------------------------------Tag----------------------------------------------------------->
+git tag nombreVersion: Se crea la etiqueta. 
+git tag -a nombreVersion -m "Mensaje": Se crea una etiqueta con un mensaje.  
+git tag: Muestra todos los tag creados. 
+git push origin --tags: Sube todos los tags a gitHub.
+
+<----------------------------------------------------------cmd------------------------------------------------------------>
+
+ls: Muestra todos los archivos en la ubicación actual. 
+dir: Igual que ls. 
+cd nombreArchivo: Pasa a la posición donde se encuentra el archivo.
+
+<------------------------------------------------------branches----------------------------------------------------------->
+
+git branch nombreRama: Se agrega una nueva rama. 
+git checkout nombreRama: Se cambia a la rama seleccionada. Se trabajara ahora en la rama seleccionada. 
+-Combinar las ramas::
+git checkout master: Primero se tiene que ir a la rama principal.
+git merge nombreRama: Se une la rama mencionada con la rama principal. 
+git branch -d nombreRama: Se elimina la rama mencionada.
+::
+git checkout -b nombreRama: Crea una nueva rama u se posiciona en ella. 
+
+<----------------------------------------------------------gitHub----------------------------------------------------------->
+
+-Enlazar un archivo del repositorio local al repositorio online::
+git remote add urlProporcionadaPorGit: Se menciona en que lugar de gitHub se almacenara. 
+git push -u origin master: Agrega el repositorio a gitHub.
+:: 
+git clone urlDelProyectoProporcionadaPorGitHub: Descarga el repositorio en gitHub.  
+
+<----------------------------------------------------------pull----------------------------------------------------------->
+
+git pull: Guarda archivos que existan en gitHub en el repositorio local. 
+
+<----------------------------------------------------------push----------------------------------------------------------->
